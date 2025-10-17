@@ -7,7 +7,7 @@ import TicketView from '../views/TicketView.vue'
 import MyPageView from '../views/MyPageView.vue' 
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory('/bokuao/'), // 👈 リポジトリ名に置き換え
   routes: [
     {
       path: '/', // ルートパス (アプリ起動時のデフォルト)
