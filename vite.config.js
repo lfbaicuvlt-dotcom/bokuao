@@ -2,11 +2,16 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-// 💡 修正点: ここで必要なPostCSSプラグインをインポートする
+// 💡 修正点: リポジトリ名を設定
+const REPO_NAME = 'bokuao'; 
+
 import tailwindcss from '@tailwindcss/postcss'
 import autoprefixer from 'autoprefixer'
 
 export default defineConfig({
+  // 👇 修正点: base パスをリポジトリ名に設定
+  base: `/${REPO_NAME}/`, 
+  
   plugins: [
     vue(),
   ],
