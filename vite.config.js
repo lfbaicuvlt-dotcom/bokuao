@@ -33,7 +33,7 @@ export default defineConfig({
           // 必要に応じてランタイムキャッシュ戦略を追加
         ]
       },
-      includeAssets: ['favicon.ico', 'images/boku-ao-logo.png'], // キャッシュするアセット
+      includeAssets: ['favicon.ico', '/images/boku-ao-logo.png'], // キャッシュするアセット
       manifest: {
         name: '僕が見たかった青空', // 💡 アプリ名
         short_name: '僕が見たかった青空',      // 💡 ホーム画面のアイコン名
@@ -44,17 +44,17 @@ export default defineConfig({
         icons: [
           // 💡 PWAで必要なアイコンサイズを定義
           {
-            src: 'images/pwa-192x192.png',
+            src: '/images/pwa-192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'images/pwa-512x512.png',
+            src: '/images/pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png'
           },
           {
-            src: 'images/pwa-512x512.png',
+            src: '/images/pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable' // マスク可能なアイコン (Android用)
