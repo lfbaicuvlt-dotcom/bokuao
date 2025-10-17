@@ -19,6 +19,20 @@ export default defineConfig({
     // 💡 PWAプラグインの設定を追加 (マニフェストとサービスワーカーの設定)
     VitePWA({
       registerType: 'autoUpdate', // サービスワーカーの自動更新
+      // 💡 修正点: サービスワーカーがリポジトリ名を含むパスで読み込まれるように設定を調整
+      devOptions: {
+        enabled: true
+      },
+      workbox: {
+        // サービスワーカーをプロジェクトルートの直下に生成し、
+        // アプリの base パス（/bokuao/）を考慮した URL で読み込ませる
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,vue}'],
+        // スコープを明示的に設定（重要）
+        navigateFallback: 'index.html',
+        runtimeCaching: [
+          // 必要に応じてランタイムキャッシュ戦略を追加
+        ]
+      },
       includeAssets: ['favicon.ico', 'images/boku-ao-logo.png'], // キャッシュするアセット
       manifest: {
         name: '僕が見たかった青空', // 💡 アプリ名
